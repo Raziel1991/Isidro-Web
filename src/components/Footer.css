@@ -1,0 +1,99 @@
+/* src/components/Footer.css */
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .footer-image {
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+  }
+  
+  .footer-image img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-image:hover img {
+    transform: scale(1.2); /* Slight zoom on hover */
+  }
+  
+  .social-bar {
+    background-color: rgb(76, 187, 23); /*rgb(3, 167, 81); Dark green for the social media bar */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the icons */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px; /* Adjust the height to match the footer */
+    width: 0; /* Start with a width of 0 */
+    overflow: hidden; /* Hide content until drawn */
+    transition: width 0.8s ease; /* Smooth transition for the bar width */
+    z-index: 1; /* Ensure the bar is behind the icon */
+  }
+
+  .social-right {
+    background-color:green; /* Adjust color as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 0; /* Initially hidden */
+    overflow: hidden; /* Hide content until drawn */
+    transition: width 0.8s ease; /* Smooth transition for the width */
+    z-index: 1;
+  }
+  
+  /* Keep the bar visible when hovering on the entire footer content */
+  .footer-content:hover .social-bar {
+    width: 80%; /* The full width of the bar when hovered */
+  }
+  .footer-content:hover .social-right {
+    width: 20%;
+  }
+
+  
+  /*no links required in links*/
+  .social-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-20px); /* Slide in from left */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Fade-in and slide-in animation */
+    transition-delay: 0.8s; /* Delay until the bar finishes drawing */
+  }
+  
+  .social-bar a:nth-child(2) {
+    transition-delay: 1s; /* Delay for the second icon */
+  }
+  
+  .social-bar a:nth-child(3) {
+    transition-delay: 1.2s; /* Delay for the third icon */
+  }
+  
+  /* Make icons visible when the bar is fully drawn */
+  .footer-content:hover .social-bar a {
+    opacity: 1; 
+    transform: translateX(0); /* Move the icons into place */
+  }
+  
+  .social-bar a:hover {
+    color: #fff700; /* Yellow on hover for visibility */
+  }
+  
+  /* Keep the social bar visible while hovering over the footer area */
+  .footer-content:hover .social-bar {
+    transform: translateX(0); /* Ensure visibility */
+  }
+  

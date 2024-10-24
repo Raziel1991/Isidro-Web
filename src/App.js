@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+
+import FlipBook from './components/FlipBook';
+import Menu from './components/Menu'; // Import the Menu component
+import Footer from './components/Footer'; // Import the Footer component
 import './App.css';
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState('Comics');
+
+  const tabs = ['Comics', 'Character Design', 'FanArt and Commissions', 'Story Board', 'WebToon', 'WebToon-editing', 'Miscellaneous'];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu tabs={tabs} selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+
+      <div className="content">
+        <FlipBook selectedTab={selectedTab} />
+      </div>
+
+      <Footer /> {/* Use the Footer component */}
     </div>
   );
 }

@@ -1,0 +1,52 @@
+.flipbook {
+    width: 80%; /* Wider display */
+    margin: 20px auto;
+    border: 5px solid black; /* Manga-style border around the entire flipbook */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); /* Shadow for a 3D book effect */
+    background-color: white; /* Classic manga white background */
+  }
+  
+  article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Takes up most of the screen */
+    padding: 20px;
+  }
+  
+  article img {
+    max-width: 95%;
+    height: auto;
+    border: 2px solid black; /* Comic-style border for each page */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Add some depth to images */
+    transition: transform 0.3s ease; /* Add some zoom animation on hover */
+  }
+  
+  article img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for a dynamic effect */
+  }
+  
+  .flipbook .react-flip-page .flip-page-inner {
+    background-color: #f8f8f8; /* Subtle off-white for manga background */
+  }
+  
+  .flip-page {
+    transition: all 0.7s ease-in-out; /* Smooth page flip animation */
+  }
+  
+  article {
+    position: relative;
+  }
+  
+  article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000; /* Frame around each image */
+    z-index: 2;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shading for manga feel */
+  }
+  
