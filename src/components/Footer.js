@@ -22,7 +22,6 @@ const Footer = () => {
           </a>
         </div>
         <div className='social-right'>
-
         </div>
       </div>
     </footer>
